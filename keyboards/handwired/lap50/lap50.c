@@ -1,4 +1,4 @@
-#include "mini50.h"
+#include "lap50.h"
 
 void matrix_init_kb(void) {
 	// put your keyboard start-up code here

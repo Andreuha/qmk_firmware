@@ -1,7 +1,7 @@
-Mini50 keyboard firmware
+lap50 keyboard firmware
 ======================
 
-##Mini50
+##lap50
 
 This layout is designed to be the smallest staggered keyboard to build into a lapboard. This use-case is geared towards casual use while watching television.
 
@@ -11,7 +11,7 @@ For the full Quantum feature list, see [the parent readme.md](/docs/README.md).
 
 ## Building
 
-Use the command `make handwired/mini50`
+Use the command `make handwired/lap50`
 
 
 <!-- ### Default
