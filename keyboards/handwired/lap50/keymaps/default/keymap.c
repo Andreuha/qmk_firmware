@@ -1,5 +1,11 @@
 #include "lap50.h"
 
+
+// Key Combos
+#define CTRLSFT LCTL(KC_LSFT)
+#define CTLALTSFT LALT(LCTL(KC_LSFT))
+#define CTLALTDEL LALT(LCTL(KC_DEL))
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = KEYMAP( /* lap50 - QWERTY */
       KC_ESC,   KC_1,     KC_2,     KC_3,    KC_4,     KC_5,     KC_6,     KC_7,    KC_8,     KC_9,     KC_0,     KC_DEL,  \
@@ -13,13 +19,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,   XXXXXXX,  KC_UP,     XXXXXXX,    XXXXXXX,     XXXXXXX,     KC_HOME,    KC_PGDN,    KC_PGUP,     KC_END,      KC_MINS,   KC_EQL,  \
       XXXXXXX,  KC_LEFT,  KC_DOWN,   KC_RIGHT,   XXXXXXX,     XXXXXXX,     KC_LEFT,    KC_DOWN,    KC_UP,       KC_RIGHT,               _______,     \
       _______,            XXXXXXX,   XXXXXXX,    XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     _______,    XXXXXXX,  \
-      _______,  _______,  _______,                     _______,                                                              _______,    _______ \
+      _______,  _______,  _______,                     _______,                                                              CTRLSFT,    _______ \
   ),
   [2] = KEYMAP( /* lap50 - Empty */
-      _______,  KC_F11,   KC_F12,    XXXXXXX,    XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     XXXXXXX,    _______,  \
+      _______,  KC_F11,   KC_F12,    XXXXXXX,    XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     XXXXXXX,    CTLALTDEL,  \
       _______,  XXXXXXX,  XXXXXXX,   XXXXXXX,    XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,    XXXXXXX,    KC_LBRC,     KC_RBRC,    KC_BSLS,  \
-      _______,  XXXXXXX,  XXXXXXX,   XXXXXXX,    XXXXXXX,     XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     KC_SCLN,                 KC_QUOT,   \
-      _______,            XXXXXXX,   XXXXXXX,    XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,    XXXXXXX,    LSFT(KC_COMM),SFT_T(SFT_T(KC_DOT)),LSFT(KC_SLSH),  \
+      _______,  XXXXXXX,  KC_PSCREEN,XXXXXXX,    XXXXXXX,     XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     KC_SCLN,                 KC_QUOT,   \
+      _______,            XXXXXXX,   KC_PAUSE,   KC_SLCK,     KC_INSERT,     XXXXXXX,     XXXXXXX,    XXXXXXX,    LSFT(KC_COMM),SFT_T(LSFT(KC_DOT)),LSFT(KC_SLSH),  \
       _______,  _______,  _______,                     _______,                                                              _______,    _______ \
   ),
   [9] = KEYMAP( /* lap50 - Empty */
