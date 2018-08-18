@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [_LOWER] = LAYOUT( \
     CTLALTDEL,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    XXXXXXX,   KC_PSCREEN,    ooooooo, ooooooo,            XXXXXXX,  XXXXXXX,  KC_UNDS,  KC_PLUS,  KC_LCBR,  KC_RCBR,  _______, ooooooo, ooooooo,    \
-    KC_DEL,     KC_F5,    KC_F6,    KC_F7,    KC_F8,    XXXXXXX,   KC_SCROLLLOCK, ooooooo, ooooooo,            XXXXXXX,  XXXXXXX,  KC_MINS,  KC_EQLS,  KC_LBRC,  KC_RBRC,     _______, ooooooo, ooooooo,   \
+    KC_DEL,     KC_F5,    KC_F6,    KC_F7,    KC_F8,    XXXXXXX,   KC_SCROLLLOCK, ooooooo, ooooooo,            XXXXXXX,  XXXXXXX,  KC_MINS,  KC_EQL,   KC_LBRC,  KC_RBRC,  _______, ooooooo, ooooooo,   \
     _______,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   XXXXXXX,   KC_PAUSE,      ooooooo, ooooooo,            XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  _______, ooooooo, ooooooo,        \
     _______,    _______,  _______,  _______,  _______,  _______,   KC_INSERT,     ooooooo, ooooooo,            _______,  _______,  _______,  _______,  _______,  _______,  _______, ooooooo, ooooooo,      \
     ooooooo,    ooooooo,  ooooooo,  ooooooo,  ooooooo,  ooooooo,   ooooooo,       ooooooo, ooooooo,            ooooooo,  ooooooo,  ooooooo,  ooooooo,  ooooooo,  ooooooo,  ooooooo, ooooooo, ooooooo,    \
