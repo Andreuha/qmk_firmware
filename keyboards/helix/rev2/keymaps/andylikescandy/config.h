@@ -24,14 +24,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // if you need more program area, try uncomment follow line
 #include "serial_config_simpleapi.h"
 
-// place overrides here
-
-
-
 /* period of tapping(ms) */
 #ifndef TAPPING_TERM
-#define TAPPING_TERM    50
+#define TAPPING_TERM    3000
 #endif
 
+
+// place overrides here
+#define IGNORE_MOD_TAP_INTERRUPT
+#define PERMISSIVE_HOLD
+#define PREVENT_STUCK_MODIFIERS
+#define QMK_KEYS_PER_SCAN 2
 
 #endif /* CONFIG_USER_H */
