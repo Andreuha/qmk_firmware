@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* period of tapping(ms) */
 #ifndef TAPPING_TERM
-#define TAPPING_TERM    3000
+#define TAPPING_TERM    300
 #endif
 
 
@@ -34,6 +34,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define IGNORE_MOD_TAP_INTERRUPT
 #define PERMISSIVE_HOLD
 #define PREVENT_STUCK_MODIFIERS
-#define QMK_KEYS_PER_SCAN 2
+//#define QMK_KEYS_PER_SCAN 1
 
 #endif /* CONFIG_USER_H */
