@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,          KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC, \
     KC_ESC, KC_A,          KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT, \
     KC_LSFT, KC_Z,          KC_X,    KC_C,    KC_V,    KC_B,    KC_ENT, KC_BSLS, KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_T(KC_ENT) , \
-    KC_LCTL, LCTL(KC_LSFT), KC_LGUI, KC_LALT, LOWER,   NAVSPC,  NAVPRN,  KC_DEL,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
+    KC_LCTL, LCTL(KC_LSFT), KC_LGUI, KC_LALT, LOWER,   NAVSPC,  NAVPRN,  KC_DEL,  NAVSPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
     ),
 
   /* Colemak
@@ -105,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,  KC_Q,          KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC, \
       KC_ESC, KC_A,          KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT, \
       KC_LSFT, KC_Z,          KC_X,    KC_C,    KC_V,    KC_B,    KC_ENT, KC_BSLS, KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_T(KC_ENT) , \
-      KC_LCTL, LCTL(KC_LSFT), KC_LGUI, KC_LALT, LOWER,   NAVSPC,  NAVPRN,  KC_DEL,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
+      KC_LCTL, LCTL(KC_LSFT), KC_LGUI, KC_LALT, LOWER,   NAVSPC,  NAVPRN,  KC_DEL,  NAVSPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
       ),
 
   /* Dvorak
@@ -185,7 +185,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-------------------------------------------------------------------------------------------------'
    */
   [_ADJUST] =  LAYOUT( \
-      KC_F1,        KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, \
+      RGB_TOG, RGB_MODE_PLAIN, RGB_MODE_BREATHE,   RGB_MODE_RAINBOW,   RGB_MODE_SWIRL,   RGB_MODE_SNAKE,                     RGB_MODE_KNIGHT,   RGB_MODE_XMAS,   RGB_MODE_GRADIENT,   RGB_MODE_RGBTEST,  KC_F11,  KC_F12, \
       _______,      RESET,   RGBRST,  _______, _______, _______,                   _______, _______, _______, _______, _______, KC_DEL, \
       _______,      _______, _______, AU_ON,   AU_OFF,  AG_NORM,                   AG_SWAP, QWERTY,  COLEMAK, DVORAK,  _______, _______, \
       KC_CAPSLOCK,  _______, _______, _______, _______, _______, _______, _______, _______, _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, \
@@ -437,6 +437,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
+    // case NAVIGATION:
+    //   if (record->event.pressed) {
+    //     //not sure how to have keyboard check mode and set it to a variable, so my work around
+    //     //uses another variable that would be set to true after the first time a reactive key is pressed.
+    //     if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+    //     } else {
+    //       TOG_STATUS = !TOG_STATUS;
+    //       #ifdef RGBLIGHT_ENABLE
+    //         //rgblight_mode(15);
+    //       #endif
+    //     }
+    //     layer_on(_NAVIGATION);
+    //     update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST,_NAVIGATION);
+    //   } else {
+    //     #ifdef RGBLIGHT_ENABLE
+    //       //rgblight_mode(RGB_current_mode);  // revert RGB to initial mode prior to RGB mode change
+    //     #endif
+    //     layer_off(_NAVIGATION);
+    //     TOG_STATUS = false;
+    //     update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST, _NAVIGATION);
+    //   }
+    //   return false;
+    //   break;
     case ADJUST:
         if (record->event.pressed) {
           layer_on(_ADJUST);
@@ -565,9 +588,9 @@ void matrix_update(struct CharacterMatrix *dest,
 static void render_logo(struct CharacterMatrix *matrix) {
 
   static char logo[]={
-    0x80,0x81,0x82,0x83,0x84,0x85,0x86,0x87,0x88,0x89,0x8a,0x8b,0x8c,0x8d,0x8e,0x8f,0x90,0x91,0x92,0x93,0x94,
-    0xa0,0xa1,0xa2,0xa3,0xa4,0xa5,0xa6,0xa7,0xa8,0xa9,0xaa,0xab,0xac,0xad,0xae,0xaf,0xb0,0xb1,0xb2,0xb3,0xb4,
-    0xc0,0xc1,0xc2,0xc3,0xc4,0xc5,0xc6,0xc7,0xc8,0xc9,0xca,0xcb,0xcc,0xcd,0xce,0xcf,0xd0,0xd1,0xd2,0xd3,0xd4,
+    0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x05,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+    0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
     0};
   matrix_write(matrix, logo);
   //matrix_write_P(&matrix, PSTR(" Split keyboard kit"));
