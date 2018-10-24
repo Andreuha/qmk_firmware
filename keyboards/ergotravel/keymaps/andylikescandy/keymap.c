@@ -10,8 +10,11 @@ extern keymap_config_t keymap_config;
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
-  LOWER,
-  RAISE,
+/*this is to make lower/raise act as spacebars as well*/
+  LOWER=LT(_LOWER,KC_SPACE),
+  RAISE=LT(_RAISE,KC_SPACE),
+  //LOWER,
+  //RAISE,
   ADJUST,
   NAVIGATION,
 };
@@ -22,6 +25,9 @@ enum custom_keycodes {
 #define XXXX KC_NO
 
 #define NAVSPC LT( 3, KC_SPC)
+#define LWRSPC LT( 1, KC_SPC)
+#define RSESPC LT( 2, KC_SPC)
+#define CAD LCTL(LALT(KC_DELETE))
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -31,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
      KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_DEL,           KC_MINS,  KC_H,    KC_N,    KC_E,    KC_I,    KC_O,   KC_QUOT,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_ENT,             KC_BSLS,  KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_ENT,             KC_BSLS,  KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_T(KC_ENT),
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
      KC_LCTL, LCTL(KC_LSFT), KC_LGUI, KC_LALT,    NAVSPC,   LOWER,           RAISE,  NAVSPC,            KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT
   //`--------+--------+--------+--------+--------+--------+--------/        \--------+--------+--------+--------+--------+--------+--------'
@@ -45,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
      _______, KC_F9,  KC_F10,  KC_F11, KC_F12,  XXXXXXX,  _______,           _______,  XXXXXXX,    XXXXXXX,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     _______, _______, _______, _______,           _______,   _______,           _______,  _______,             KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+     _______, _______, _______, _______,           KC_SPC,   _______,           _______,  KC_SPC,             KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   //`--------+--------+--------+--------+--------+--------+--------/        \--------+--------+--------+--------+--------+--------+--------'
   ),
 
@@ -57,31 +63,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
      _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______,             _______,  XXXXXXX,    XXXXXXX,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     _______, _______, _______, _______,           _______,   _______,           _______,  _______,             KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+     _______, _______, _______, _______,           KC_SPC,   _______,           _______,  KC_SPC,             KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   //`--------+--------+--------+--------+--------+--------+--------/        \--------+--------+--------+--------+--------+--------+--------'
   ),
 
   [_ADJUST] = LAYOUT(
-  //,--------+--------+--------+--------+--------+--------+--------.        ,--------+--------+--------+--------+--------+--------+--------.
-     RESET,  XXXX,    XXXX,    XXXX,    XXXX,    XXXX,    XXXX,            XXXX,    KC_7,    KC_8,    KC_9,    XXXX,    XXXX,  XXXX,
+  //,-~-------+--------+--------+--------+--------+--------+--------.        ,--------+--------+--------+--------+--------+--------+--------.
+     RESET,  XXXX,    XXXX,    XXXX,    KC_PAUSE,    XXXX,    XXXX,            XXXX,    KC_7,    KC_8,    KC_9,    XXXX,    XXXX,  XXXX,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     XXXX,  XXXX,    XXXX,    XXXX,    XXXX,    XXXX,    XXXX,             XXXX,    KC_4,    KC_5,    KC_6,    XXXX,    XXXX,    XXXX,
+     CAD,    XXXX,    XXXX,    KC_SCROLLLOCK,    XXXX,    XXXX,    XXXX,             XXXX,    KC_4,    KC_5,    KC_6,    KC_INSERT,    XXXX,    XXXX,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
      KC_CAPS, XXXX,    XXXX,    XXXX,    XXXX,    XXXX,    XXXX,             KC_0,    KC_1,    KC_2,    KC_3,    XXXX,    XXXX, XXXX,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     XXXX,    XXXX,    XXXX,    XXXX,           _______,    _______,           _______,    KC_0,        KC_DOT,    XXXX,    XXXX, XXXX
+     XXXX,    XXXX,    XXXX,    XXXX,           _______,    _______,           _______,    _______,        KC_DOT,    XXXX,    XXXX, XXXX
   //`--------+--------+--------+--------+--------+--------+--------/        \--------+--------+--------+--------+--------+--------+--------'
 ),
 
 [_NAVIGATION] = LAYOUT(
 //,--------+--------+--------+--------+--------+--------+--------.        ,--------+--------+--------+--------+--------+--------+--------.
-   XXXXXXX,  XXXX,    XXXX,    XXXX,    XXXX,    XXXX,    _______,             KC_RCBR,    XXXX,    KC_HOME, KC_PGDN, KC_PGUP, KC_END,    KC_BSPC,
+   XXXXXXX,  XXXX,    XXXX,    XXXX,    XXXX,    XXXX,    RESET,             KC_RCBR,    XXXX,    KC_HOME, KC_PGDN, KC_PGUP, KC_END,    KC_BSPC,
 //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
    KC_DEL,  XXXX,    XXXX,    KC_LSFT,    KC_LCTL,    XXXX,    _______,             KC_LCBR,     XXXX,    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,    KC_DEL,
 //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
    KC_LSFT, XXXX,    XXXX,    XXXX,    XXXX,    XXXX,    _______,             _______,  XXXX,    XXXX,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
 //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-   KC_LCTL, LCTL(KC_LSFT), KC_LGUI, KC_LALT,           _______,   KC_SPC,           KC_SPC,  _______,            KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT
+   KC_LCTL, LCTL(KC_LSFT), KC_MENU, KC_LALT,           _______,   _______,           _______,  _______,            KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT
 //`--------+--------+--------+--------+--------+--------+--------/        \--------+--------+--------+--------+--------+--------+--------'
 )
 
@@ -112,7 +118,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_off(_LOWER);
         update_tri_layer(_LOWER, _RAISE, _ADJUST);
       }
-      return false;
+      /* return false gets commented out when using raise/lower as space bars*/
+      //return false;
       break;
     case RAISE:
       if (record->event.pressed) {
@@ -122,7 +129,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_off(_RAISE);
         update_tri_layer(_LOWER, _RAISE, _ADJUST);
       }
-      return false;
+      /* return false gets commented out when using raise/lower as space bars*/
+      //return false;
       break;
     case ADJUST:
       if (record->event.pressed) {
