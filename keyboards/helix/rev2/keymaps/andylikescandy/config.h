@@ -25,10 +25,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "serial_config_simpleapi.h"
 
 /* period of tapping(ms) */
-#ifndef TAPPING_TERM
-#define TAPPING_TERM    300
-#endif
 
+#undef TAPPING_TERM
+#define TAPPING_TERM    300
 
 // place overrides here
 #define IGNORE_MOD_TAP_INTERRUPT

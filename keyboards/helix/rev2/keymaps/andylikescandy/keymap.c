@@ -125,8 +125,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
       KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,                      KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_DEL, \
       KC_LCTL, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                      KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_SLSH, \
-      KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_LBRC, KC_RBRC, KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_ENT , \
-      ADJUST,  KC_ESC,  KC_LALT, KC_LGUI, EISU,    LOWER,   KC_SPC,  KC_SPC,  RAISE,   KANA,    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
+      KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    COLEMAK, KC_RBRC, KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_ENT , \
+      KC_LCTL, LCTL(KC_LSFT), KC_LGUI, KC_LALT, LOWER,   NAVSPC,  NAVPRN,  KANA,  NAVSPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
       ),
 
   /* Lower
@@ -186,7 +186,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [_ADJUST] =  LAYOUT( \
       RGB_TOG, RGB_MODE_PLAIN, RGB_MODE_BREATHE,   RGB_MODE_RAINBOW,   RGB_MODE_SWIRL,   RGB_MODE_SNAKE,                     RGB_MODE_KNIGHT,   RGB_MODE_XMAS,   RGB_MODE_GRADIENT,   RGB_MODE_RGBTEST,  KC_F11,  KC_F12, \
-      _______,      RESET,   RGBRST,  _______, _______, _______,                   _______, _______, _______, _______, _______, KC_DEL, \
+      _______,      RESET,   RGBRST,  _______, KC_PAUSE, _______,                   _______, KC_SCROLLLOCK, _______, _______, _______, KC_DEL, \
       _______,      _______, _______, AU_ON,   AU_OFF,  AG_NORM,                   AG_SWAP, QWERTY,  COLEMAK, DVORAK,  _______, _______, \
       KC_CAPSLOCK,  _______, _______, _______, _______, _______, _______, _______, _______, _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, \
       _______,      _______, _______, _______, _______, _______, _______, _______, _______, _______, RGB_SMOD,RGB_HUD, RGB_SAD, RGB_VAD \
@@ -205,11 +205,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 * `-----------------------------------------------------------------------------------'
 */
 [_NAVIGATION] = LAYOUT( \
-  XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX,                  XXXXXXX,       KC_HOME, KC_PGDN, KC_PGUP, KC_END,      LCTL(KC_BSPC) , \
-  XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX,                  XXXXXXX,       KC_HOME, KC_PGDN, KC_PGUP, KC_END,      LCTL(KC_BSPC) , \
+  RESET,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX,                  XXXXXXX,       KC_HOME, KC_PGDN, KC_PGUP, KC_END,      LCTL(KC_BSPC) , \
+  XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX, KC_PAUSE,       XXXXXXX,                  XXXXXXX,       KC_HOME, KC_PGDN, KC_PGUP, KC_END,      LCTL(KC_BSPC) , \
   KC_DEL,              LCTL(KC_A), XXXXXXX, KC_LSFT, KC_LCTL,    XXXXXXX,                  XXXXXXX,       KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,     KC_DEL, \
   LCTL(KC_LSFT),       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX,       XXXXXXX, KC_RSFT, KC_RSFT, KC_RSFT,         KC_ENT, \
-  _______,             _______, _______,  _______, _______,      _______, XXXXXXX, XXXXXXX, _______,       LCTL(KC_LEFT), LCTL(KC_DOWN), LCTL(KC_UP), LCTL(KC_RGHT), _______ \
+  _______,             _______, _______,  _______, _______,      _______, XXXXXXX, XXXXXXX, _______,       _______, LCTL(KC_LEFT), LCTL(KC_DOWN), LCTL(KC_UP), LCTL(KC_RGHT) \
   )
 };
 
