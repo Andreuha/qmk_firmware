@@ -207,8 +207,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NAVIGATION] = LAYOUT( \
   RESET,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX,                  XXXXXXX,       KC_HOME, KC_PGDN, KC_PGUP, KC_END,      LCTL(KC_BSPC) , \
   XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX, KC_PAUSE,       XXXXXXX,                  XXXXXXX,       KC_HOME, KC_PGDN, KC_PGUP, KC_END,      LCTL(KC_BSPC) , \
-  KC_DEL,              LCTL(KC_A), XXXXXXX, KC_LSFT, KC_LCTL,    XXXXXXX,                  XXXXXXX,       KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,     KC_DEL, \
-  LCTL(KC_LSFT),       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX,       XXXXXXX, KC_RSFT, KC_RSFT, KC_RSFT,         KC_ENT, \
+  KC_DEL,              KC_APP, XXXXXXX, KC_LSFT, KC_LCTL,    XXXXXXX,                  XXXXXXX,       KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,     KC_DEL, \
+  LCTL(KC_LSFT),       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX,       KC_MENU, KC_RSFT, KC_RSFT, KC_RSFT,         KC_ENT, \
   _______,             _______, _______,  _______, _______,      _______, XXXXXXX, XXXXXXX, _______,       _______, LCTL(KC_LEFT), LCTL(KC_DOWN), LCTL(KC_UP), LCTL(KC_RGHT) \
   )
 };
