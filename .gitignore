@@ -71,3 +71,7 @@ secrets.tar
 id_rsa_*
 /.vs
 lib/ugfx
+.vscode/c_cpp_properies.json
+.vscode/settings.json
+.vscode/settings.json
+.vscode/settings.json
