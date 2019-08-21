@@ -45,7 +45,6 @@ enum planck_keycodes {
 #define _NAVIGATION 8
 #define NAVL MO(_NAVIGATION)
 #define NAVSPC LT( 8, KC_SPC)
-//#define SHFTENT SHFT_T(KC_ENT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -60,16 +59,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * | Ctrl | CS   |  Alt | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
    * `-----------------------------------------------------------------------------------'
    */
-  // [_QWERTY] = LAYOUT_planck_grid(
-  //   KC_TAB,  KC_Q,           KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-  //   KC_ESC,  KC_A,           KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-  //   KC_LSFT, KC_Z,           KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_T(KC_ENTER) ,
-  //   KC_LCTL, LCTL(KC_LSFT),  KC_LGUI, KC_LALT, LOWER,   NAVSPC,  NAVSPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
-  // ),
-  [_QWERTY] = LAYOUT_planck_grid( /*REUSING THIS TO TEST SWAPPING RAISE AND LOWER*/
-    KC_TAB,  KC_Q,           KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
-    KC_ESC,  KC_A,           KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
-    KC_LSFT, KC_Z,           KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_T(KC_ENTER)  ,
+  [_QWERTY] = LAYOUT_planck_grid(
+    KC_TAB,  KC_Q,           KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+    KC_ESC,  KC_A,           KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+    KC_LSFT, KC_Z,           KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_T(KC_ENTER) ,
     KC_LCTL, LCTL(KC_LSFT),  KC_LGUI, KC_LALT, RAISE,   NAVSPC,  NAVSPC,  LOWER,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   ),
   /* Colemak
@@ -87,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,           KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
     KC_ESC,  KC_A,           KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
     KC_LSFT, KC_Z,           KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_T(KC_ENTER)  ,
-    KC_LCTL, LCTL(KC_LSFT),  KC_LGUI, KC_LALT, LOWER,   NAVSPC,  NAVSPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_LCTL, LCTL(KC_LSFT),  KC_LGUI, KC_LALT, RAISE,   NAVSPC,  NAVSPC,  LOWER,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   ),
 
   // /* Dvorak
@@ -102,10 +95,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //  * `-----------------------------------------------------------------------------------'
   //  */
   [_DVORAK] = LAYOUT_planck_grid(
-    KC_TAB,  KC_QUOT,          KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSPC,
-    KC_ESC,  KC_A,             KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_QUOT,
-    KC_LSFT, KC_SCLN,          KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    SFT_T(KC_ENTER) ,
-    KC_LCTL, LCTL(KC_LSFT),    KC_LGUI, KC_LALT, LOWER,   NAVSPC,  NAVSPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_TAB,  KC_QUOT,        KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSPC,
+    KC_ESC,  KC_A,           KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_QUOT,
+    KC_LSFT, KC_SCLN,        KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    SFT_T(KC_ENTER) ,
+    KC_LCTL, LCTL(KC_LSFT),  KC_LGUI, KC_LALT, RAISE,   NAVSPC,  NAVSPC,  LOWER,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   ),
   //
 // /* Lower
@@ -141,7 +134,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_GRV,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,    KC_BSPC ,
    KC_DEL,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,       KC_BSLS ,
    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,    KC_ENTER ,
-   _______, _______, _______, _______, _______, KC_SPC, KC_SPC, _______, KC_HOME, KC_PGDN, KC_PGUP,    KC_END
+   _______, _______, _______, _______, _______, KC_SPC,  KC_SPC,  _______, KC_HOME, KC_PGDN, KC_PGUP,    KC_END
 ),
 
 /* Plover layer (http://opensteno.org)
@@ -184,7 +177,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 * ,-----------------------------------------------------------------------------------.
 * |      |      |      |      |      |      |      | Home | PgDn | PgUp | End  |ctlBsp|
 * |------+------+------+------+------+-------------+------+------+------+------+------|
-* |  Del |Ctl+A |      |Shift | Ctrl |      |      | Left | Down |  Up  |Right |  Del |
+* |  Del |Ctl+A |  S   |Shift | Ctrl |      |      | Left | Down |  Up  |Right |  Del |
 * |------+------+------+------+------+------|------+------+------+------+------+------|
 * | C+S  |Ctl+z |Ctl+x |Ctl+c |Ctl+v |      |      |      |Shift |Shift |Shift |Enter |
 * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -192,13 +185,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 * `-----------------------------------------------------------------------------------'
 */
 [_NAVIGATION] = LAYOUT_planck_grid(
-  XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX, KC_PSCR,       XXXXXXX, XXXXXXX,       KC_HOME, KC_PGDN, KC_PGUP, KC_END,      LCTL(KC_BSPC) ,
-  KC_DEL,              LCTL(KC_A), XXXXXXX, KC_LSFT, KC_LCTL,    XXXXXXX, XXXXXXX,       KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,     KC_DEL,
-  LCTL(KC_LSFT),       XXXXXXX, XXXXXXX, XXXXXXX, KC_PAUS,       XXXXXXX, XXXXXXX,       XXXXXXX, KC_RSFT, KC_RSFT, KC_RSFT,         KC_ENTER,
-  _______,             _______, _______,  _______, _______,      _______, _______,       LCTL(KC_LEFT), LCTL(KC_DOWN), LCTL(KC_UP), LCTL(KC_RGHT), _______
+  XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX, KC_PSCR,    XXXXXXX, XXXXXXX,     KC_HOME, KC_PGDN, KC_PGUP, KC_END,          LCTL(KC_BSPC) ,
+  KC_DEL,         LCTL(KC_A), KC_S, KC_LSFT, KC_LCTL,    XXXXXXX, XXXXXXX,     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,         KC_DEL,
+  LCTL(KC_LSFT),  XXXXXXX, XXXXXXX, XXXXXXX, KC_PAUS,    XXXXXXX, XXXXXXX,     XXXXXXX, KC_RSFT, KC_RSFT, KC_RSFT,         KC_ENTER,
+  _______,        _______, _______,  _______, _______,   _______, _______,     LCTL(KC_LEFT), LCTL(KC_DOWN), LCTL(KC_UP),  LCTL(KC_RGHT), _______
 )
-
-
 };
 
 #ifdef AUDIO_ENABLE
