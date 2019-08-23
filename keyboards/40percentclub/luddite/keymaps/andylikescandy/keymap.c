@@ -12,6 +12,8 @@ extern keymap_config_t keymap_config;
 
 #define NAVSPC LT( 2, KC_SPC)
 
+#define xxxxxxx KC_NO
+
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
 };
