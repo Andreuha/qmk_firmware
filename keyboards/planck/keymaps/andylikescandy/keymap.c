@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------|------+------+------+------+------+------|
    * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Ctrl | CS   |  Alt | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+   * | Ctrl | CS   |  Alt | GUI  |Raise |    Space    |Lower | Left | Down |  Up  |Right |
    * `-----------------------------------------------------------------------------------'
    */
   [_QWERTY] = LAYOUT_planck_grid(
@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------|------+------+------+------+------+------|
    * | Shift|   Z  |   X  |   C  |   V  |   B  |   K  |   M  |   ,  |   .  |   /  |SftEnt|
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Ctrl | CS   |  Alt | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+   * | Ctrl | CS   |  Alt | GUI  |Raise |    Space    |Lower | Left | Down |  Up  |Right |
    * `-----------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_grid(
@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //  * |------+------+------+------+------+------|------+------+------+------+------+------|
   //  * | Shift|   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |Enter |
   //  * |------+------+------+------+------+------+------+------+------+------+------+------|
-  //  * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+  //  * | Brite| Ctrl | Alt  | GUI  |Raise |    Space    |Lower | Left | Down |  Up  |Right |
   //  * `-----------------------------------------------------------------------------------'
   //  */
   [_DVORAK] = LAYOUT_planck_grid(
