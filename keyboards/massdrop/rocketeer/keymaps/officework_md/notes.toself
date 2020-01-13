@@ -1,0 +1,4 @@
+make massdrop/rocketeer:officework_md
+cd .build
+./mdloader_windows.exe --first --download massdrop_rocketeer_officework_md.hex --restart
+cd ..
