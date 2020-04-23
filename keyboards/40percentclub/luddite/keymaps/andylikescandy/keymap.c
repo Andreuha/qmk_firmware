@@ -10,6 +10,7 @@ extern keymap_config_t keymap_config;
 #define _FN1 1
 #define _NAV 2
 
+#define MOFN LT( 1, KC_APP)
 #define NAVSPC LT( 2, KC_SPC)
 
 #define xxxxxxx KC_NO
@@ -24,19 +25,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS, \
     KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT, \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
-    KC_LCTL , KC_LGUI , KC_LALT ,                      NAVSPC                    , KC_RALT , MO(_FN1), KC_RGUI   , KC_RCTL
+    KC_LCTL , KC_LGUI , KC_LALT ,                      NAVSPC                    , KC_RALT , MOFN, KC_RGUI   , KC_RCTL
   ),
 
   [_FN1] = LAYOUT_60_ansi(
     KC_GESC, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_BSPC, \
-    xxxxxxx, RESET, KC_UP,   xxxxxxx,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, \
+    _______, _______, KC_UP,   xxxxxxx,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, \
     LALT(LCTL(KC_DEL)), KC_LEFT, KC_DOWN, KC_RGHT, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______,\
     BL_INC, BL_DEC, BL_TOGG, RGB_TOG, RGB_MOD, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, _______, \
     KC_GRV, _______, _______, _______, _______,          _______, _______, _______
   ),
 
     [_NAV] = LAYOUT_60_ansi(
-      KC_GESC, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_BSPC, \
+      KC_GRV, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_BSPC, \
       _______, xxxxxxx, xxxxxxx,   xxxxxxx,   xxxxxxx, xxxxxxx, xxxxxxx, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_PSCR, KC_SLCK, KC_PAUSE, \
       KC_DEL,    xxxxxxx, xxxxxxx, KC_LSFT, KC_LCTL, xxxxxxx, xxxxxxx, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, xxxxxxx, _______,\
       _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, _______, \
